@@ -1,0 +1,136 @@
+{
+  "mode": "chaos",
+  "duration_s": 60.428970375,
+  "clients": 16,
+  "ops_completed": 27867,
+  "ops_per_sec": 464.45,
+  "faults": [
+    {
+      "at_ns": 3401741542,
+      "kind": "isolate_leader",
+      "target": 1,
+      "election_ms": 248.618583,
+      "unavailability_ms": 27.056709
+    },
+    {
+      "at_ns": 6401875917,
+      "kind": "isolate_leader",
+      "target": 2,
+      "election_ms": 274.752083,
+      "unavailability_ms": 347.478875
+    },
+    {
+      "at_ns": 9401556458,
+      "kind": "isolate_follower",
+      "target": 2
+    },
+    {
+      "at_ns": 12402067042,
+      "kind": "kill_leader",
+      "target": 1,
+      "election_ms": 178.132416,
+      "unavailability_ms": 364.298083
+    },
+    {
+      "at_ns": 15402167958,
+      "kind": "delay_link",
+      "target": 32
+    },
+    {
+      "at_ns": 18401752667,
+      "kind": "delay_link",
+      "target": 21
+    },
+    {
+      "at_ns": 21401429500,
+      "kind": "kill_leader",
+      "target": 3,
+      "election_ms": 289.50475,
+      "unavailability_ms": 357.439667
+    },
+    {
+      "at_ns": 24401703083,
+      "kind": "delay_link",
+      "target": 12
+    },
+    {
+      "at_ns": 27401759708,
+      "kind": "isolate_leader",
+      "target": 1,
+      "election_ms": 185.518209,
+      "unavailability_ms": 17.875042
+    },
+    {
+      "at_ns": 30401625458,
+      "kind": "isolate_follower",
+      "target": 1
+    },
+    {
+      "at_ns": 33401974333,
+      "kind": "kill_leader",
+      "target": 2,
+      "election_ms": 518.471917,
+      "unavailability_ms": 662.033375
+    },
+    {
+      "at_ns": 39401984042,
+      "kind": "isolate_leader",
+      "target": 3,
+      "election_ms": 410.808291,
+      "unavailability_ms": 9.091625
+    },
+    {
+      "at_ns": 42401761208,
+      "kind": "kill_follower",
+      "target": 2
+    },
+    {
+      "at_ns": 45402079667,
+      "kind": "kill_follower",
+      "target": 2
+    },
+    {
+      "at_ns": 48401898042,
+      "kind": "isolate_leader",
+      "target": 1,
+      "election_ms": 168.99275,
+      "unavailability_ms": 280.614459
+    },
+    {
+      "at_ns": 51401761083,
+      "kind": "delay_link",
+      "target": 12
+    },
+    {
+      "at_ns": 54401798750,
+      "kind": "kill_leader",
+      "target": 2,
+      "election_ms": 494.964875,
+      "unavailability_ms": 656.545083
+    },
+    {
+      "at_ns": 57402661125,
+      "kind": "delay_link",
+      "target": 21
+    }
+  ],
+  "client_retries": 919,
+  "applied_log_entries": 27933,
+  "duplicate_log_entries_absorbed": 66,
+  "final_state_hash": "1fc8100df21d67e2",
+  "replicas_agree": true,
+  "lost_acked_ops": 0,
+  "double_applied_ops": 0,
+  "result_mismatches": 0,
+  "real_time_order_violations": 0,
+  "porcupine": "timeout",
+  "porcupine_ms": 120004.019,
+  "latency_ms_p50_p90_p99_p999_max_mean": [
+    27.181459,
+    46.895042,
+    62.875625,
+    689.885292,
+    2306.2655,
+    34.459564787346935
+  ]
+}

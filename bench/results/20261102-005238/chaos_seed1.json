@@ -1,0 +1,143 @@
+{
+  "mode": "chaos",
+  "duration_s": 60.441173834,
+  "clients": 16,
+  "ops_completed": 26755,
+  "ops_per_sec": 445.9166666666667,
+  "faults": [
+    {
+      "at_ns": 3416942209,
+      "kind": "isolate_leader",
+      "target": 3,
+      "election_ms": 229.65175,
+      "unavailability_ms": 24.703792
+    },
+    {
+      "at_ns": 6417162500,
+      "kind": "isolate_follower",
+      "target": 2
+    },
+    {
+      "at_ns": 9417569917,
+      "kind": "isolate_follower",
+      "target": 2
+    },
+    {
+      "at_ns": 12416773167,
+      "kind": "delay_link",
+      "target": 21
+    },
+    {
+      "at_ns": 15416862334,
+      "kind": "kill_leader",
+      "target": 1,
+      "election_ms": 226.184041,
+      "unavailability_ms": 356.007208
+    },
+    {
+      "at_ns": 18417256334,
+      "kind": "kill_leader",
+      "target": 2,
+      "election_ms": 249.927125,
+      "unavailability_ms": 362.624
+    },
+    {
+      "at_ns": 21417166584,
+      "kind": "isolate_leader",
+      "target": 3,
+      "election_ms": 250.286833,
+      "unavailability_ms": 298.978792
+    },
+    {
+      "at_ns": 24417321792,
+      "kind": "kill_leader",
+      "target": 2,
+      "election_ms": 217.123708,
+      "unavailability_ms": 348.015166
+    },
+    {
+      "at_ns": 27417391792,
+      "kind": "delay_link",
+      "target": 21
+    },
+    {
+      "at_ns": 30416901375,
+      "kind": "delay_link",
+      "target": 23
+    },
+    {
+      "at_ns": 33417486042,
+      "kind": "isolate_leader",
+      "target": 3,
+      "election_ms": 231.799625,
+      "unavailability_ms": 26.966042
+    },
+    {
+      "at_ns": 36417156209,
+      "kind": "kill_leader",
+      "target": 1,
+      "election_ms": 310.451416,
+      "unavailability_ms": 351.974583
+    },
+    {
+      "at_ns": 39418234292,
+      "kind": "isolate_follower",
+      "target": 1
+    },
+    {
+      "at_ns": 42416860209,
+      "kind": "isolate_leader",
+      "target": 3,
+      "election_ms": 191.647041,
+      "unavailability_ms": 27.88125
+    },
+    {
+      "at_ns": 45417446084,
+      "kind": "kill_leader",
+      "target": 2,
+      "election_ms": 217.751875,
+      "unavailability_ms": 351.8135
+    },
+    {
+      "at_ns": 48417082500,
+      "kind": "isolate_leader",
+      "target": 3,
+      "election_ms": 202.670459,
+      "unavailability_ms": 26.958959
+    },
+    {
+      "at_ns": 51416891209,
+      "kind": "kill_follower",
+      "target": 1
+    },
+    {
+      "at_ns": 54417161375,
+      "kind": "kill_follower",
+      "target": 1
+    },
+    {
+      "at_ns": 57417226500,
+      "kind": "isolate_follower",
+      "target": 1
+    }
+  ],
+  "client_retries": 942,
+  "applied_log_entries": 26843,
+  "duplicate_log_entries_absorbed": 88,
+  "final_state_hash": "87016a3dc5ad745d",
+  "replicas_agree": true,
+  "lost_acked_ops": 0,
+  "double_applied_ops": 0,
+  "result_mismatches": 0,
+  "real_time_order_violations": 0,
+  "porcupine": "timeout",
+  "porcupine_ms": 120005.12,
+  "latency_ms_p50_p90_p99_p999_max_mean": [
+    29.82675,
+    51.959959,
+    72.361833,
+    570.249625,
+    1648.928875,
+    35.892472662455866
+  ]
+}

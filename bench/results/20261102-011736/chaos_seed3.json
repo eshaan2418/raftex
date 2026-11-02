@@ -1,0 +1,118 @@
+{
+  "mode": "chaos",
+  "duration_s": 60.321825417,
+  "clients": 16,
+  "ops_completed": 33602,
+  "ops_per_sec": 560.0333333333333,
+  "faults": [
+    {
+      "at_ns": 3312301584,
+      "kind": "kill_follower",
+      "target": 1
+    },
+    {
+      "at_ns": 6312683959,
+      "kind": "isolate_follower",
+      "target": 1
+    },
+    {
+      "at_ns": 9312920084,
+      "kind": "isolate_leader",
+      "target": 3,
+      "election_ms": 301.453333,
+      "unavailability_ms": 312.982833
+    },
+    {
+      "at_ns": 12312227334,
+      "kind": "kill_leader",
+      "target": 1,
+      "election_ms": 233.127041,
+      "unavailability_ms": 341.946583
+    },
+    {
+      "at_ns": 15312411750,
+      "kind": "isolate_follower",
+      "target": 1
+    },
+    {
+      "at_ns": 21312532250,
+      "kind": "delay_link",
+      "target": 13
+    },
+    {
+      "at_ns": 24312459000,
+      "kind": "kill_leader",
+      "target": 2,
+      "election_ms": 308.921292,
+      "unavailability_ms": 341.331375
+    },
+    {
+      "at_ns": 27313690875,
+      "kind": "isolate_leader",
+      "target": 1,
+      "election_ms": 166.732542,
+      "unavailability_ms": 18.98425
+    },
+    {
+      "at_ns": 30312184709,
+      "kind": "isolate_follower",
+      "target": 1
+    },
+    {
+      "at_ns": 33312791625,
+      "kind": "isolate_leader",
+      "target": 3,
+      "election_ms": 571.855542,
+      "unavailability_ms": 7.708583
+    },
+    {
+      "at_ns": 36312262625,
+      "kind": "kill_follower",
+      "target": 1
+    },
+    {
+      "at_ns": 42312500167,
+      "kind": "isolate_follower",
+      "target": 1
+    },
+    {
+      "at_ns": 45312426125,
+      "kind": "kill_follower",
+      "target": 1
+    },
+    {
+      "at_ns": 48312813334,
+      "kind": "kill_follower",
+      "target": 1
+    },
+    {
+      "at_ns": 54312215750,
+      "kind": "delay_link",
+      "target": 13
+    },
+    {
+      "at_ns": 57312282709,
+      "kind": "isolate_follower",
+      "target": 1
+    }
+  ],
+  "client_retries": 536,
+  "applied_log_entries": 33651,
+  "duplicate_log_entries_absorbed": 49,
+  "final_state_hash": "737ac1a22a805459",
+  "replicas_agree": true,
+  "lost_acked_ops": 0,
+  "double_applied_ops": 0,
+  "result_mismatches": 0,
+  "real_time_order_violations": 0,
+  "porcupine": "timeout",
+  "porcupine_ms": 120015.843,
+  "latency_ms_p50_p90_p99_p999_max_mean": [
+    27.071333,
+    37.979542,
+    48.907666,
+    366.05575,
+    1488.952917,
+    28.570981562406875
+  ]
+}

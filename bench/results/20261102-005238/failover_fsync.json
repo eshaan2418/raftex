@@ -1,0 +1,161 @@
+{
+  "mode": "failover",
+  "duration_s": 60.469039417,
+  "clients": 16,
+  "ops_completed": 24756,
+  "ops_per_sec": 412.6,
+  "faults": [
+    {
+      "at_ns": 3429685792,
+      "kind": "kill_leader",
+      "target": 1,
+      "election_ms": 163.942375,
+      "unavailability_ms": 184.124458
+    },
+    {
+      "at_ns": 6430320209,
+      "kind": "kill_leader",
+      "target": 2,
+      "election_ms": 202.01925,
+      "unavailability_ms": 356.293625
+    },
+    {
+      "at_ns": 9430407917,
+      "kind": "kill_leader",
+      "target": 3,
+      "election_ms": 224.142125,
+      "unavailability_ms": 350.336084
+    },
+    {
+      "at_ns": 12430445125,
+      "kind": "kill_leader",
+      "target": 2,
+      "election_ms": 254.38975,
+      "unavailability_ms": 361.682
+    },
+    {
+      "at_ns": 15430083459,
+      "kind": "kill_leader",
+      "target": 1,
+      "election_ms": 163.694875,
+      "unavailability_ms": 178.982291
+    },
+    {
+      "at_ns": 18430819709,
+      "kind": "kill_leader",
+      "target": 3,
+      "election_ms": 273.344583,
+      "unavailability_ms": 343.671208
+    },
+    {
+      "at_ns": 21429923250,
+      "kind": "kill_leader",
+      "target": 2,
+      "election_ms": 245.439209,
+      "unavailability_ms": 339.906708
+    },
+    {
+      "at_ns": 24430622292,
+      "kind": "kill_leader",
+      "target": 1,
+      "election_ms": 252.821833,
+      "unavailability_ms": 341.007667
+    },
+    {
+      "at_ns": 27430031500,
+      "kind": "kill_leader",
+      "target": 3,
+      "election_ms": 339.399375,
+      "unavailability_ms": 659.884375
+    },
+    {
+      "at_ns": 30430389167,
+      "kind": "kill_leader",
+      "target": 2,
+      "election_ms": 221.454083,
+      "unavailability_ms": 338.525292
+    },
+    {
+      "at_ns": 33429817000,
+      "kind": "kill_leader",
+      "target": 3,
+      "election_ms": 173.542875,
+      "unavailability_ms": 348.800167
+    },
+    {
+      "at_ns": 36430234584,
+      "kind": "kill_leader",
+      "target": 2,
+      "election_ms": 203.992666,
+      "unavailability_ms": 338.892209
+    },
+    {
+      "at_ns": 39430167042,
+      "kind": "kill_leader",
+      "target": 1,
+      "election_ms": 165.552292,
+      "unavailability_ms": 344.337125
+    },
+    {
+      "at_ns": 42430437917,
+      "kind": "kill_leader",
+      "target": 2,
+      "election_ms": 291.30975,
+      "unavailability_ms": 336.337167
+    },
+    {
+      "at_ns": 45430141750,
+      "kind": "kill_leader",
+      "target": 1,
+      "election_ms": 299.71575,
+      "unavailability_ms": 349.422333
+    },
+    {
+      "at_ns": 48430158250,
+      "kind": "kill_leader",
+      "target": 2,
+      "election_ms": 197.920125,
+      "unavailability_ms": 337.734
+    },
+    {
+      "at_ns": 51430302084,
+      "kind": "kill_leader",
+      "target": 1,
+      "election_ms": 274.535375,
+      "unavailability_ms": 360.030667
+    },
+    {
+      "at_ns": 54430298875,
+      "kind": "kill_leader",
+      "target": 3,
+      "election_ms": 190.792125,
+      "unavailability_ms": 351.989834
+    },
+    {
+      "at_ns": 57430491584,
+      "kind": "kill_leader",
+      "target": 1,
+      "election_ms": 229.830125,
+      "unavailability_ms": 361.260084
+    }
+  ],
+  "client_retries": 2538,
+  "applied_log_entries": 24929,
+  "duplicate_log_entries_absorbed": 173,
+  "final_state_hash": "6146bd1f1b14cf29",
+  "replicas_agree": true,
+  "lost_acked_ops": 0,
+  "double_applied_ops": 0,
+  "result_mismatches": 0,
+  "real_time_order_violations": 0,
+  "porcupine": "timeout",
+  "porcupine_ms": 120005.741,
+  "latency_ms_p50_p90_p99_p999_max_mean": [
+    27.037333,
+    50.850125,
+    347.357917,
+    1005.520792,
+    2017.43275,
+    38.79598185958965
+  ]
+}

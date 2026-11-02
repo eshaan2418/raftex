@@ -1,0 +1,41 @@
+name: CI
+on:
+  push:
+  pull_request:
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+      - run: go vet ./...
+      - name: Unit + simulation tests (race detector)
+        run: go test -race -short -count=1 ./...
+      - name: Full Raft simulation (200 seeds)
+        run: go test -count=1 -run TestSim ./internal/raft/
+      - name: Multi-process chaos test (kill -9, partitions, delays; Porcupine)
+        run: go test -count=1 -run TestChaosEndToEnd -v ./internal/chaos/
+  fuzz:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+      - run: go test -run '^$' -fuzz FuzzWALRecover -fuzztime 60s ./internal/wal/
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+      - uses: golangci/golangci-lint-action@v8
+        with:
+          version: latest

@@ -1,0 +1,4 @@
+  kill -9 leader node1: new leader in 174 ms, clients blocked 338 ms
+  kill -9 leader node2: new leader in 253 ms, clients blocked 328 ms
+  orders completed: 2,185   client retries: 133   duplicate log entries absorbed: 11
+  replicas agree: True   lost acked: 0   double-applied: 0   Porcupine: linearizable

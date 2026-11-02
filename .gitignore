@@ -1,0 +1,6 @@
+bin/
+NOTES.md
+*.wal
+*.log
+.DS_Store
+testdata/fuzz/*/

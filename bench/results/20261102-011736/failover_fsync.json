@@ -1,0 +1,161 @@
+{
+  "mode": "failover",
+  "duration_s": 60.351639,
+  "clients": 16,
+  "ops_completed": 32823,
+  "ops_per_sec": 547.05,
+  "faults": [
+    {
+      "at_ns": 3337967209,
+      "kind": "kill_leader",
+      "target": 1,
+      "election_ms": 220.205958,
+      "unavailability_ms": 338.857208
+    },
+    {
+      "at_ns": 6338498375,
+      "kind": "kill_leader",
+      "target": 2,
+      "election_ms": 264.790417,
+      "unavailability_ms": 334.187167
+    },
+    {
+      "at_ns": 9338293834,
+      "kind": "kill_leader",
+      "target": 3,
+      "election_ms": 197.163625,
+      "unavailability_ms": 335.127875
+    },
+    {
+      "at_ns": 12339442000,
+      "kind": "kill_leader",
+      "target": 1,
+      "election_ms": 295.003917,
+      "unavailability_ms": 332.308584
+    },
+    {
+      "at_ns": 15338258667,
+      "kind": "kill_leader",
+      "target": 3,
+      "election_ms": 245.125,
+      "unavailability_ms": 329.137
+    },
+    {
+      "at_ns": 18338007042,
+      "kind": "kill_leader",
+      "target": 1,
+      "election_ms": 198.532292,
+      "unavailability_ms": 333.428333
+    },
+    {
+      "at_ns": 21338256334,
+      "kind": "kill_leader",
+      "target": 3,
+      "election_ms": 170.9925,
+      "unavailability_ms": 347.822667
+    },
+    {
+      "at_ns": 24338234292,
+      "kind": "kill_leader",
+      "target": 2,
+      "election_ms": 214.878208,
+      "unavailability_ms": 333.918959
+    },
+    {
+      "at_ns": 27338568834,
+      "kind": "kill_leader",
+      "target": 3,
+      "election_ms": 182.336125,
+      "unavailability_ms": 344.656291
+    },
+    {
+      "at_ns": 30338307667,
+      "kind": "kill_leader",
+      "target": 2,
+      "election_ms": 448.049,
+      "unavailability_ms": 654.887625
+    },
+    {
+      "at_ns": 33338348834,
+      "kind": "kill_leader",
+      "target": 1,
+      "election_ms": 198.956916,
+      "unavailability_ms": 334.90425
+    },
+    {
+      "at_ns": 36338640584,
+      "kind": "kill_leader",
+      "target": 2,
+      "election_ms": 283.812833,
+      "unavailability_ms": 343.323458
+    },
+    {
+      "at_ns": 39338618917,
+      "kind": "kill_leader",
+      "target": 3,
+      "election_ms": 170.11375,
+      "unavailability_ms": 351.590459
+    },
+    {
+      "at_ns": 42339338000,
+      "kind": "kill_leader",
+      "target": 2,
+      "election_ms": 423.096292,
+      "unavailability_ms": 661.731166
+    },
+    {
+      "at_ns": 45338224667,
+      "kind": "kill_leader",
+      "target": 3,
+      "election_ms": 225.9715,
+      "unavailability_ms": 341.696417
+    },
+    {
+      "at_ns": 48339457084,
+      "kind": "kill_leader",
+      "target": 1,
+      "election_ms": 227.7315,
+      "unavailability_ms": 350.562416
+    },
+    {
+      "at_ns": 51338364709,
+      "kind": "kill_leader",
+      "target": 2,
+      "election_ms": 343.735541,
+      "unavailability_ms": 656.24125
+    },
+    {
+      "at_ns": 54338889292,
+      "kind": "kill_leader",
+      "target": 3,
+      "election_ms": 267.631375,
+      "unavailability_ms": 340.463042
+    },
+    {
+      "at_ns": 57338366667,
+      "kind": "kill_leader",
+      "target": 1,
+      "election_ms": 197.831958,
+      "unavailability_ms": 332.725125
+    }
+  ],
+  "client_retries": 2634,
+  "applied_log_entries": 33048,
+  "duplicate_log_entries_absorbed": 225,
+  "final_state_hash": "631d6f16506c8d37",
+  "replicas_agree": true,
+  "lost_acked_ops": 0,
+  "double_applied_ops": 0,
+  "result_mismatches": 0,
+  "real_time_order_violations": 0,
+  "porcupine": "timeout",
+  "porcupine_ms": 120004.997,
+  "latency_ms_p50_p90_p99_p999_max_mean": [
+    23.940958,
+    34.376459,
+    58.148584,
+    993.107958,
+    2291.169834,
+    29.246928451086248
+  ]
+}

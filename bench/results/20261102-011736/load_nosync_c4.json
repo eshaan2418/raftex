@@ -1,0 +1,27 @@
+{
+  "mode": "load",
+  "duration_s": 15.264471333,
+  "clients": 4,
+  "ops_completed": 237853,
+  "ops_per_sec": 15856.866666666667,
+  "faults": null,
+  "client_retries": 0,
+  "applied_log_entries": 237853,
+  "duplicate_log_entries_absorbed": 0,
+  "final_state_hash": "138152861c1c3358",
+  "replicas_agree": true,
+  "lost_acked_ops": 0,
+  "double_applied_ops": 0,
+  "result_mismatches": 0,
+  "real_time_order_violations": 0,
+  "porcupine": "linearizable",
+  "porcupine_ms": 27905.799,
+  "latency_ms_p50_p90_p99_p999_max_mean": [
+    0.246916,
+    0.305375,
+    0.37875,
+    0.55475,
+    5.120958,
+    0.2516331859257614
+  ]
+}
