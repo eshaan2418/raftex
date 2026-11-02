@@ -40,13 +40,13 @@ func main() {
 		if err != nil {
 			panic(err)
 		}
-		defer os.RemoveAll(d)
+		defer func() { _ = os.RemoveAll(d) }()
 	}
 	absBin, _ := filepath.Abs(*bin)
 	c := &chaos.Cluster{Bin: absBin, Dir: d, N: 3, Base: *base, NoSync: *nosync}
 	if err := c.Start(); err != nil {
 		fmt.Fprintln(os.Stderr, "start:", err)
-		os.Exit(1)
+		os.Exit(1) //nolint:gocritic // exitAfterDefer: existing exit paths (1 and 3) skip the deferred cleanup; left unchanged here
 	}
 	defer c.Stop()
 	rep := chaos.Run(context.Background(), c, chaos.Options{Mode: *mode, Duration: *dur, Clients: *clients, FaultEvery: *every, Seed: *seed})

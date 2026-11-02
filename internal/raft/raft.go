@@ -349,9 +349,10 @@ func (n *Node) Step(m Message) {
 		n.becomeFollower(m.Term, lead)
 	case m.Term < n.term:
 		// Stale message. Answer so a stale leader/candidate learns the new term.
-		if m.Type == MsgApp || m.Type == MsgHeartbeat {
+		switch m.Type {
+		case MsgApp, MsgHeartbeat:
 			n.send(Message{Type: MsgAppResp, To: m.From, Term: n.term, Reject: true})
-		} else if m.Type == MsgPreVote || m.Type == MsgVote {
+		case MsgPreVote, MsgVote:
 			t := MsgVoteResp
 			if m.Type == MsgPreVote {
 				t = MsgPreVoteResp

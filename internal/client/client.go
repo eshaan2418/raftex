@@ -77,7 +77,7 @@ func (c *Client) try(ctx context.Context, addr string, body []byte) (exchange.Re
 	if err != nil {
 		return exchange.Result{}, "", err
 	}
-	defer resp.Body.Close()
+	defer func() { _ = resp.Body.Close() }()
 	switch resp.StatusCode {
 	case http.StatusOK:
 		var r exchange.Result

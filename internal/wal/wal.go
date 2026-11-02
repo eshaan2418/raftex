@@ -130,7 +130,7 @@ func Recover(path string) (Recovered, error) {
 	if err != nil {
 		return r, err
 	}
-	defer f.Close()
+	defer func() { _ = f.Close() }()
 	br := bufio.NewReaderSize(f, 1<<20)
 	for {
 		var hdr [8]byte

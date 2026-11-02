@@ -46,8 +46,9 @@ func (c *Cluster) IDs() []uint64 {
 
 // ClientAddrs returns all client API addresses.
 func (c *Cluster) ClientAddrs() []string {
-	var a []string
-	for _, id := range c.IDs() {
+	ids := c.IDs()
+	a := make([]string, 0, len(ids))
+	for _, id := range ids {
 		a = append(a, c.clientAddr(id))
 	}
 	return a
@@ -91,8 +92,10 @@ func (c *Cluster) Start() error {
 
 // StartNode (re)starts one node process; it recovers from its WAL.
 func (c *Cluster) StartNode(id uint64) error {
-	var peers, clients []string
-	for _, p := range c.IDs() {
+	ids := c.IDs()
+	peers := make([]string, 0, len(ids))
+	clients := make([]string, 0, len(ids))
+	for _, p := range ids {
 		addr := c.raftAddr(p)
 		if p != id {
 			addr = c.proxyAddr(id, p)
@@ -165,7 +168,7 @@ func (c *Cluster) Status(id uint64) (node.Status, error) {
 	if err != nil {
 		return st, err
 	}
-	defer resp.Body.Close()
+	defer func() { _ = resp.Body.Close() }()
 	return st, json.NewDecoder(resp.Body).Decode(&st)
 }
 
@@ -191,7 +194,7 @@ func (c *Cluster) AppliedLog(id uint64) ([]node.AppliedEntry, error) {
 	if err != nil {
 		return nil, err
 	}
-	defer resp.Body.Close()
+	defer func() { _ = resp.Body.Close() }()
 	var l []node.AppliedEntry
 	return l, json.NewDecoder(resp.Body).Decode(&l)
 }

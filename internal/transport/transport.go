@@ -87,7 +87,7 @@ func (t *Transport) acceptLoop(ctx context.Context) {
 			return
 		}
 		go func() {
-			defer c.Close()
+			defer func() { _ = c.Close() }()
 			go func() {
 				<-ctx.Done()
 				_ = c.Close()

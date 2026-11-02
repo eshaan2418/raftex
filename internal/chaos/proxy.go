@@ -3,6 +3,7 @@
 package chaos
 
 import (
+	"errors"
 	"io"
 	"net"
 	"sync"
@@ -107,7 +108,7 @@ func (p *Proxy) pipe(src, dst net.Conn) {
 			}
 		}
 		if err != nil {
-			if err != io.EOF {
+			if !errors.Is(err, io.EOF) {
 				return
 			}
 			return

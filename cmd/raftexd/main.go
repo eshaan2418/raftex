@@ -53,17 +53,27 @@ func main() {
 		log.Error("mkdir", "err", err)
 		os.Exit(1)
 	}
+	cfg := node.Config{ID: *id, RaftAddrs: parseMap(*peers), RaftListen: *raftListen,
+		ClientAddr: *clientAddr, ClientAddrs: parseMap(*clients), DataDir: *data, Tick: *tick,
+		ElectionTicks: *election, NoSync: *nosync, Log: log}
+	if err := run(cfg, log); err != nil {
+		os.Exit(1)
+	}
+}
+
+// run starts and serves the node until SIGINT/SIGTERM. It is split out of main so the deferred
+// context cancel runs before main calls os.Exit.
+func run(cfg node.Config, log *slog.Logger) error {
 	ctx, cancel := signal.NotifyContext(context.Background(), os.Interrupt, syscall.SIGTERM)
 	defer cancel()
-	n, err := node.Start(ctx, node.Config{ID: *id, RaftAddrs: parseMap(*peers), RaftListen: *raftListen,
-		ClientAddr: *clientAddr, ClientAddrs: parseMap(*clients), DataDir: *data, Tick: *tick,
-		ElectionTicks: *election, NoSync: *nosync, Log: log})
+	n, err := node.Start(ctx, cfg)
 	if err != nil {
 		log.Error("start", "err", err)
-		os.Exit(1)
+		return err
 	}
 	if err := n.Serve(ctx); err != nil {
 		log.Error("serve", "err", err)
-		os.Exit(1)
+		return err
 	}
+	return nil
 }
