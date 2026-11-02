@@ -19,7 +19,11 @@ import (
 	"github.com/eshaan2418/raftex/internal/chaos"
 )
 
-func main() {
+func main() { os.Exit(run()) }
+
+// run returns the process exit code (0 ok, 1 setup failure, 3 safety violation) so that every
+// deferred cleanup (stopping node processes, removing the temp directory) runs on every path.
+func run() int {
 	mode := flag.String("mode", "chaos", "chaos | failover | load")
 	bin := flag.String("bin", "bin/raftexd", "raftexd binary")
 	dur := flag.Duration("duration", 60*time.Second, "workload duration")
@@ -38,17 +42,18 @@ func main() {
 		var err error
 		d, err = os.MkdirTemp("", "raftex-chaos-")
 		if err != nil {
-			panic(err)
+			fmt.Fprintln(os.Stderr, "mkdtemp:", err)
+			return 1
 		}
 		defer func() { _ = os.RemoveAll(d) }()
 	}
 	absBin, _ := filepath.Abs(*bin)
 	c := &chaos.Cluster{Bin: absBin, Dir: d, N: 3, Base: *base, NoSync: *nosync}
+	defer c.Stop() // safe after a partial Start: it kills whatever was launched
 	if err := c.Start(); err != nil {
 		fmt.Fprintln(os.Stderr, "start:", err)
-		os.Exit(1) //nolint:gocritic // exitAfterDefer: existing exit paths (1 and 3) skip the deferred cleanup; left unchanged here
+		return 1
 	}
-	defer c.Stop()
 	rep := chaos.Run(context.Background(), c, chaos.Options{Mode: *mode, Duration: *dur, Clients: *clients, FaultEvery: *every, Seed: *seed})
 	b, _ := json.MarshalIndent(rep, "", "  ")
 	if *out != "" {
@@ -57,6 +62,7 @@ func main() {
 	fmt.Println(string(b))
 	if !rep.ReplicasAgree || rep.LostAcked > 0 || rep.DoubleApplied > 0 || rep.ResultMismatch > 0 ||
 		rep.RealTimeViol > 0 || rep.Porcupine == "NOT linearizable" {
-		os.Exit(3)
+		return 3
 	}
+	return 0
 }
